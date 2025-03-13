@@ -50,7 +50,8 @@ Click on the connect buttons. Potentially you might still be connected from the 
 
 Clean up your Subscribed Topics so that you are not subscribing to any topics any more.
 
-![image](https://github.com/user-attachments/assets/1ac8af54-7f84-4bae-b3b2-651fc91be20a)
+![Pic 5a](../../images/ex2-5a.png)
+
 
 
 3. Check out the hierarchical categorization of animals below
@@ -71,12 +72,13 @@ Now try out different combinations of publishing to a topic and listening to a t
 4. Register the consumer to listen to the Zebra topic - we just want to learn about Zebras getting born
 
 For this subscribe the consumer to the topic animals/vertebrates/warm-blooded/mammals/zebra
-
-![Pic 7](../../images/ex2-7.png)
+![Pic 7](../../images/ex2-7a.png)
 
 5. Send a Zebra.born event to the topic animals/vertebrates/warm-blooded/mammals/zebra
 
 Go to the Publisher, add Zebra.born to the message field, put animals/vertebrates/warm-blooded/mammals/zebra into the topic field and click Publish
+
+![Pic 7](../../images/ex2-7b.png)
 
 You should receive the message.
 

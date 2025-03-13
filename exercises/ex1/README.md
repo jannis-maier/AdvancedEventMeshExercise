@@ -16,23 +16,22 @@ Password: provided by your moderator
 
 Check out the different areas in the Advanced Event Mesh cockpit , representing the different categories of services AEM offers
 
-- Event Streaming: Mission Control makes it easy to deploy event brokers, create event meshes, and optimize and monitor the health/performance of an event-driven system. Mission Control is a section in the Cloud Console that permits you to access event brokers, visualize and manage your event broker services, and visualize and design event meshes. Mission Control has a Cluster Manager and Mesh Manager that permits you to create event broker services and manage your event mesh.
+- Mission Control: Mission Control makes it easy to deploy event brokers, create event meshes, and optimize and monitor the health/performance of an event-driven system. Mission Control is a section in the Cloud Console that permits you to access event brokers, visualize and manage your event broker services, and visualize and design event meshes. Mission Control has a Cluster Manager and Mesh Manager that permits you to create event broker services and manage your event mesh.
 
      - Cluster Manager: event broker services are made available via Cluster Manager. Each event broker service consists of event brokers configured in a High-Availability (HA) setup.
 
      - Mesh Manager: use Mesh Manager to connect multiple event broker services that span different data centers to create an event mesh. An event mesh is an architectural layer that allows events from one application to be dynamically routed and received by any other application no matter where these applications are deployed (no cloud, private cloud, public cloud). This layer is composed by a network of event broker services. Event broker services are a modern form of messaging middleware, which are designed to move events across the distributed enterprise.
 
-- Event Management: Event Portal provides event management services. This subscribed service provides powerful tools to create, design, share, and manage various aspects of an EDA based on event brokers or other streaming technologies (such as Kafka).
+- Event Portal: Event Portal provides event management services. This subscribed service provides powerful tools to create, design, share, and manage various aspects of an EDA based on event brokers or other streaming technologies (such as Kafka).
 
 - Event Monitoring and Insights: With Insights, we provide curated dashboards, easy-to-understand visualizations based on historical and real-time metrics, and timely notifications about your event broker services. This advanced information allows you to identify problems before they occur and helps you to better manage your services as your EDA scales. You can work with SAP to configure your monitoring to meet your needs. For advanced monitoring requirements, there's a single entry point to build custom visualizations to meet your organization's requirements. Coupled with visualizations is a notification email framework that alerts you when key metrics fall outside of your established thresholds. These notifications allow you to monitor what's occurring and correct developing issues before they impact or degrade your EDA. You can configure these notifications to integrate with your existing notification and logging systems.
 
 3. Click on Cluster Manager
 
+> Hint: if you don't see any broker, please uncheck Only show my services
+
 ![Pic 13](../../images/ex1-13.png)  
 
-Hint: if you don't see any broker, please uncheck Only show my services
-
-![Pic 13](../../images/ex1-16.png)  
 
 4. Select a Broker by clicking on it
 
@@ -58,17 +57,14 @@ On the left side of the screen are the main sections to navigate through:
 
 After completing these steps you will have created a queue in Advanced Event Mesh.
 
-1. Go back to the original tab in your browser and click on Cluster Manager on the left
+1. Go back to the original tab in your browser and click on Cluster Manager on the left.
+2. In the All Services screen click on the Broker Europe Tile (Frankfurt)
 
 ![Pic 2](../../images/ex1-2.png)  
 
-2. In the All Services screen click on the Broker Europe Tile (Frankfurt)
+> HINT: If you cannot see the tiles, uncheck the Only show my services box
 
-![Pic 3](../../images/ex1-3.png)    
-
-HINT: If you cannot see the tiles, uncheck the Only show my services box
-
-3. Click in Manage
+3. Press Manage
 
 ![Pic 4](../../images/ex1-4.png)     
 
@@ -80,7 +76,7 @@ HINT: If you cannot see the tiles, uncheck the Only show my services box
 
 ![Pic 6](../../images/ex1-6.png)        
 
-6. In the pop up enter the queue name: BLR_*** (replace *** with your number)
+6. In the pop up enter the queue name: User_*** (replace *** with your number)
 
 7. Click Create
 
@@ -100,11 +96,13 @@ HINT: If you cannot see the tiles, uncheck the Only show my services box
 
 11. Click on Subscriptions
 
+12. Click on "+Subscription" button
+
 ![Pic 10](../../images/ex1-10.png)  
 
-12. Click on +Subscription
 
-13. Enter the topic into the field. Use BLR_topic_XXX as the topic, and replace XXX with your group/participant number.
+
+13. Enter the topic into the field. Use topic_user_XXX as the topic, and replace XXX with your group/participant number.
 
 ![Pic 11](../../images/ex1-11.png)  
 
@@ -142,7 +140,7 @@ HINT: Please note that this topic is very simple to facilitate this exercise. In
 
 22. Enter your topic
     
-![image](https://github.com/user-attachments/assets/246c0a30-2913-4c5e-9b84-51c2d6583a2d)
+![Pic 22](../../images/ex1-22-topic.png)  
 
 
 24. Click Publish to send your message (most likely Hello World!) to your topic
@@ -152,17 +150,17 @@ HINT: Please note that this topic is very simple to facilitate this exercise. In
 ![image](https://github.com/user-attachments/assets/0c580931-a436-4102-8ad9-ff73ab632182)
 
 
-25. Switch back to the other tab / the broker level tab and go to your queue and click on Summary
+25. Switch back to the Queues
 
-![Pic 21](../../images/ex1-21.png)  
+![Pic 22](../../images/ex1-25.png)  
 
-26. You should see 1 Message Queued
+26. Seach for your just created queue. You should see one message queued.
 
 ![Pic 22](../../images/ex1-22.png)  
 
 You have sent a message to a topic, and via the subscription this message has been stored in your queue.
 
-27. You can leave it like this or you can play the same game a little longer: go back to the Try Me! tool and just click publish, and see in the other tab how the count of messages gets increased (don't forget to refresh the page).
+27. You can leave it like this or you can play the same game a little longer: go back to the Try Me! tool and just click publish, and see in the other tab how the count of messages gets increased (don't forget to refresh the page). When you click on your queue, you get a more detailed summary.
 
 ![Pic 23](../../images/ex1-23.png)  
 

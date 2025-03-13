@@ -29,63 +29,35 @@ If an event message is sent with `Persistent Delivery Mode` set to `Direct`, whi
 
 ### Experimenting with Persistency
 
-In this section we are going to play a bit around with persistency to see what this really means in a practical example using the broker's built-in Try-Me tab.
+In this section we are going to play a bit around with persistency to see what this really means in a practical example using built-in Try-Me tool.
+So, let's open up the `Try-Me` tool used in the last exercise.
 
-> Note, there are two different `Try-Me` tabs in AEM, one on the Cloud Console or cockpit on each service and one built into the admin UI of each broker service themself. You have used the former one previously. We are going to use the latter one now.
+1. Remove all subscriptions from your subscriber and clear the messages
 
-So, let's open up the broker UI's `Try-Me` tab next.
+![Publish 1](images/ex3-1.png)
 
-1. Go to the AEM Console and click on Cluster Manager.
-![AEM Console](images/ex3-1.png)
-
-2. Click on the same service you have used previously.
-![AEM services](images/ex3-2.png)
-
-3. Press "Connect" and open the "Solace Web Messaging" tab. Copy the Connection Details to your local notepad as you require it in the next step.
-![AEM services](images/ex3-3-1.png)
-
-4. Go to the Management tab and click on the Queues tile.
-![AEM Manage Queues](images/ex3-3.png)
-
-5. Switch to the `Try-Me` tab
-![AEM Broker Try-Me](images/ex3-4.png)
-
-6. Open the connection details (">" next to "Connect" button). 
-Here you can paste the connection details copied in step 3. Press the "Connect" button
-
-![AEM Broker Connect](images/ex3-5.png)
-
->Your browser may ask to select a certificate for authentication. Press "Cancel" to close the dialog, otherwise you will get a connection error. If you accidentially selected a certificate, please restart your browser to make sure the pop-up will show again.
->![AEM Broker Connect](images/ex3-6-2.png)
-
-7. Your publisher should now be Connected.
-![Publisher connected](images/ex3-6.png)
-
-8. Enter the topic into the topic field for the publisher. Use BLR_topic_XXX as the topic, and replace XXX with your group/participant number. And publish one message as direct.
+2. Enter the topic into the topic field for the publisher. Use topic_user_XXX as the topic, and replace XXX with your group/participant number. And publish one message as direct.
 ![Publish 1](images/ex3-7.png)
 
 > Did you receive anything?<br>
-No, of course not. Our Subscriber is not connected. Let's go ahead and connect that one now.
+No, of course not. Our Subscriber is not subscribed to the topic. Let's go ahead and add the subscription.
 
-9. Hit Connect on the Subscriber side. Your Subscriber should now be connected.
-![Subscriber connected](images/ex3-8.png)
-
-10. Enter the topic into the topic field for the subscriber. Use BLR_topic_XXX as the topic, and replace XXX with your group/participant number. And hit "Subscribe".
+3. Enter the topic into the topic field for the subscriber. Use topic_user_XXX as the topic, and replace XXX with your group/participant number. And hit "Subscribe".
 ![Subscriber subscribed](images/ex3-9.png)
 
 > Did you receive anything now?<br>
 No, still not. Our subscriber is using direct/non-persistent mode to subscribe directly to the topic on the broker. There's no persistency endpoint configured, so we don't receive any messages that were published while we were not subscribed or connected.<br>
 Let's go ahead and publish another message.
 
-11. Hit publish one more time.
+4. Hit publish one more time.
 ![AEM Direct Message Received](images/ex3-10.png)
 
 > Now we've received a message, because both our publisher and subscriber are connected at the same time! This is non-persistent messaging, sometimes also referred to as best-effort messaging. Publishers and Subscribers need to be connected at the same time and reachable so that the messages can be delivered immediately from memory (meaning no network issues). This is the fastest mode, but it's not guaranteed to be lossless.
 
-12. Publish a couple more messages, then clear your subscribers' messages and remove the topic subscription.
+5. Publish a couple more messages, then clear your subscribers' messages and remove the topic subscription.
 ![Subscriber clear](images/ex3-11.png)
 
-13. Click on `Bind to an endpoint to receive guaranteed messages`, then enter the queue name: BLR_*** (replace *** with your number) in the field for the queue.
+13. Click on `Bind to an endpoint to receive guaranteed messages`, then enter the queue name: User_*** (replace *** with your number) in the field for the queue.
 ![Bind to endpoint](images/ex3-12.png)
 
 14. Click on `Start Consume`.

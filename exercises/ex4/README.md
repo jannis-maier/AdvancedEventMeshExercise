@@ -14,40 +14,32 @@ Replay can be performed on a (non-partitioned) queue or topic endpoint. When ini
 
 ## Exercise 4.2 Experimenting with Replay
 
-1. Go to the AEM Console and click on Cluster Manager.
-![AEM Console](images/ex4_1.png)
-
-2. Click on the same service you have used previously.
-![AEM services](images/ex4_2.png)
-
-3. Go to the Management tab and click on the Queues tile.
-![AEM Manage Queues](images/ex4_3.png)
-
-4. Click on Replay on the left hand menu to check that Replay is enabled.
-![AEM Replay](images/ex4_4.png)
+1. Click on Replay on the left hand menu to check that Replay is enabled. Confirm the pop-up that your subscriber is no longer connected once you leave the 'Try-me' tool.
+![AEM Replay](images/ex4_1.png)
 
 > You should see a summary view with some stats on number of messages stored in the replay log and storage space allocated for replay. Feel free to explore some of the other tabs.
+![AEM Replay](images/ex4_1.png)
 
-5. Return to the queue overview and find your queue, select and click on the action menu.
+2. Return to the queue overview and find your queue, select and click on the action menu.
 ![AEM Queue Overview](images/ex4_5.png)
 
-6. Select "Delete All Messages" to clear the queue.
+3. Select "Delete All Messages" to clear the queue.
 ![AEM Clear Queue](images/ex4_6.png)
 
 > This will remove all currently stored messages from the queue and you will see the "Messages Queued" counter drop to zero for your queue.
 
-7. Next, open the action menu again and select "Start Replay".
+4. Next, open the action menu again and select "Start Replay".
 ![AEM Start Replay](images/ex4_7.png)
 
-8. Select "Start Replay from Beginning" and hit "Start Replay".
+5. Select "Start Replay from Beginning" and hit "Start Replay".
 ![Replay dialog](images/ex4_8.png)
 
-9. You will return to the queue overview and replay for the queue will go to "Pending Complete".
+6. You will return to the queue overview and replay for the queue will go to "Pending Complete".
 ![Replay Pending complete](images/ex4_9.png)
 
 > Some messages will start appearing in this queue as the broker is looking through the replay log for any messages matching the queue's subscription and placing them in this queue.
 
-10. Let's head on over to our broker's `Try-Me` tab again and connect our queue consumer again.
+7. Let's head on over to our broker's `Try-Me` tab again and connect our queue consumer again.
 ![Consume Replayed Messages](images/ex4_10.png)
 
 > You should now see the messages you previously published and that you had already consumed appear again. How is that possible?<br>
