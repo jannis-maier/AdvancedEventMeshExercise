@@ -68,7 +68,7 @@ After completing these steps you will have created a queue in Advanced Event Mes
 
 ![Pic 4](../../images/ex1-4.png)     
 
-4. Under Broker Manager Quick Setting click the Queues tile. A new window opens up.
+4. Under Broker Manager Quick Setting click the Queues link. A new window opens up.
 
 ![Pic 5](../../images/ex1-5.png)      
 
